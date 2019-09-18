@@ -1,3 +1,5 @@
+package edu.rit.cs;
+
 import java.util.Random;
 import java.util.Arrays;
 
@@ -8,7 +10,7 @@ import java.util.Arrays;
  * within a circle of radius 1 centered at the origin. The fraction of the
  * points within the circle is approximately &pi;/4.
  **/
-public class PiSmp {
+public class Pi_Smp {
 
 
     /**
