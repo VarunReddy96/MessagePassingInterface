@@ -10,6 +10,16 @@
   <name>parallelcomputing</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <!-- https://maven.apache.org/general.html#encoding-warning -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <local.repository.folder>${pom.basedir}/.LocalMavenRepo/</local.repository.folder>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -17,8 +27,21 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.omp4j</groupId>
+      <artifactId>omp4j</artifactId>
+      <version>1.2</version>
+      <scope>system</scope>
+      <systemPath>libs/omp4j-1.2.jar</systemPath>
+    </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>local-maven-repo</id>
+      <url>file://${local.repository.folder}</url>
+    </repository>
+  </repositories>
 
   <!-- sub modules -->
   <modules>
@@ -36,13 +59,7 @@
     <module>coin_mining</module>
   </modules>
 
-  <properties>
-    <!-- https://maven.apache.org/general.html#encoding-warning -->
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
 
   <build>
     <plugins>

@@ -1,8 +1,3 @@
-# **Overview**
-
-A sequential and parallel program have been written in [OpenMP](http://www.omp4j.org/) for java.
-
-
 # **Pi Estimation**
 
 Imagine a square dartboard with sides of length 1 and with a
@@ -15,20 +10,33 @@ board’s area = 1:
 
 It would look something like this.
 
-# **Program Input Output**
+## **Sequential Program**
 
 The program's command line arguments are the the seed for the pseudo random number generator(prng) and the number of darts to throw on the board and the program will output the calculation of
 <center>(4 * Number of darts that fall inside the circle quadrant) / (total number of darts thrown) ≈ pi</center>
 
-**Example:**
-
+```
 $ javac src/main/java/edu/rit/cs/Pi_Seq.java<br>
 $ java edu.rit.cs.Pi_Seq 142857 12000000000<br>
 pi = 4*9424753723/12000000000 = 3.141584574
+```
 
+
+
+## **Multi-thread Program**
+A sequential and parallel program have been written in [OpenMP](http://www.omp4j.org/) for java.
+
+
+```
 $ java -jar [path_openmp_jar] src/main/java/edu/rit/cs/Pi_Smp.java<br>
 $ java -cp class edu.rit.cs.Pi_Smp 142857 12000000000<br>
 pi = 4*9424753723/12000000000 = 3.141584574
+```
+
+
+
+
+## **Multi-node Program**
 
 
 
@@ -45,3 +53,5 @@ Add the following as VM Option
 ```
 -Djava.library.path=/usr/local/lib
 ```
+
+## **Apache Spark Program**
