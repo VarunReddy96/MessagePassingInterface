@@ -1,6 +1,7 @@
 package edu.rit.cs;
 
 public class OMP_Parallel_For {
+
         public static void main(String[] args) {
             int dimension = 500000;
 

@@ -18,9 +18,9 @@ RUN git clone https://gitlab.com/SpiRITlab/parallelcomputing.git /csci654/
 
 RUN wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.1.tar.gz && \
     tar xfzv openmpi-4.0.1.tar.gz && \
+    cd openmpi-4.0.1 && \
     ./configure --enable-mpi-java && \
-    make && \
-    make install && \
+    make && make install && \
     rm openmpi-4.0.1.tar.gz
 
 
