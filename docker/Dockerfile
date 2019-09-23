@@ -30,7 +30,9 @@ RUN cd /csci654Tools && \
     cd openmpi-4.0.1 && \
     ./configure --enable-mpi-java && \
     make && make install && \
-    rm -rf ../openmpi-4.0.1.tar.gz
+    rm -rf ../openmpi-4.0.1.tar.gz && \
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/lib" >> /etc/profile
+
 
 # Configure SSH access between containers
 RUN ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa && \
