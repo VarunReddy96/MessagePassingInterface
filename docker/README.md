@@ -34,6 +34,16 @@ mpiCC        mpic++       mpicc        mpicxx
 
 [OpenMPI Reference](https://www.open-mpi.org/doc/current/)
 
+Example run in Docker containers (each container offer one processor)
+```
+root@7b0565f38e7d:/csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code# make
+root@7b0565f38e7d:/csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code# mpirun -np 4 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
+Hello world from processor 7b0565f38e7d, rank 0 out of 4 processors
+Hello world from processor 7b0565f38e7d, rank 1 out of 4 processors
+Hello world from processor e917980366ed, rank 2 out of 4 processors
+Hello world from processor e917980366ed, rank 3 out of 4 processors
+```
+
 
 #### Java
 Use the following to compile your java code
