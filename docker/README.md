@@ -1,7 +1,13 @@
 # Docker Image for Parallel Computing
 
-The following commands for you to run within docker containers.
+Please run ```docker images``` and check whether ```csci654``` image exist. 
 
+If not, run the following to create a docker image. 
+```
+docker build -t csci654:latest .
+```
+
+The following commands for you to run within docker containers.
 
 ## OpenMP
 
