@@ -2,6 +2,7 @@
 
 The following commands for you to run within docker containers.
 
+
 ## OpenMP
 
 ### C++
@@ -27,9 +28,22 @@ We use Open MPI implementation.
 
 ### Compile source code
 
+In each container, run the following
+```
+cd /csci654/docker
+bash initContainer.bash
+cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
+```
+
 #### C++
 ```
 mpiCC        mpic++       mpicc        mpicxx 
+```
+
+In ```/csci654/docker/myDockerHostFile``` add additional docker containers after ```172.17.0.2```.
+```
+cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
+mpirun -np 8 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
 ```
 
 [OpenMPI Reference](https://www.open-mpi.org/doc/current/)
