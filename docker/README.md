@@ -30,9 +30,11 @@ We use Open MPI implementation.
 
 In each container, run the following
 ```
+git pull
 cd /csci654/docker
 bash initContainer.bash
 cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
+make
 ```
 
 #### C++
@@ -40,7 +42,8 @@ cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
 mpiCC        mpic++       mpicc        mpicxx 
 ```
 
-In ```/csci654/docker/myDockerHostFile``` add additional docker containers after ```172.17.0.2```.
+In the first container, add additional docker containers after ```172.17.0.2``` in ```/csci654/docker/myDockerHostFile```.
+
 ```
 cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
 mpirun -np 8 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
