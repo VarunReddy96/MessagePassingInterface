@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source /etc/profile
+ldconfig
 /etc/init.d/ssh start
 
 CONTAINERS_IP=$(cat myDockerHostFile | cut -f1 -d' ')
