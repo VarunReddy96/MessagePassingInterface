@@ -26,6 +26,24 @@ java -cp . myProgram
 ## OpenMPI
 We use Open MPI implementation. 
 
+### Start multiple docker containers
+```
+cd {PROJECT_ROOT}/docker
+bash createContainers.bash 3
+```
+This will create 3 docker containers with names: container-{yourusername}-index. For example,
+```
+container-ph-1
+container-ph-2
+container-ph-3
+```
+
+### Stop and remove all docker containers
+```
+cd {PROJECT_ROOT}/docker
+bash removeMyContainers.bash
+```
+
 ### Compile source code
 
 In each container, run the following
@@ -38,9 +56,6 @@ make
 ```
 
 #### C++
-```
-mpiCC        mpic++       mpicc        mpicxx 
-```
 
 In the first container, add additional docker containers after ```172.17.0.2``` in ```/csci654/docker/myDockerHostFile```.
 
@@ -53,7 +68,6 @@ mpirun -np 8 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi
 
 Example run in Docker containers (each container offer one processor)
 ```
-root@7b0565f38e7d:/csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code# make
 root@7b0565f38e7d:/csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code# mpirun -np 4 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
 Hello world from processor 7b0565f38e7d, rank 0 out of 4 processors
 Hello world from processor 7b0565f38e7d, rank 1 out of 4 processors
