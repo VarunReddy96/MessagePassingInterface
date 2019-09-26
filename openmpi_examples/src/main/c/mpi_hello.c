@@ -1,3 +1,14 @@
+/*
+
+ mpiexec mpi_hello
+
+ Sample program output:
+
+ Number of tasks= 2 My rank= 0 Running on mac.lan
+ Number of tasks= 2 My rank= 1 Running on mac.lan
+
+ */
+
 
 // required MPI include file
 #include "mpi.h"

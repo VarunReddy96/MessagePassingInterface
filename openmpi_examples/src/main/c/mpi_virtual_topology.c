@@ -1,4 +1,6 @@
 /*
+mpiexec --hostfile ../hostfiles/myHostfile16slots  mpi_virtual_topology
+
 Sample program output: (partial)
 
 rank=   0 coords=  0 0 neighbors(u,d,l,r)=  -1  4 -1  1

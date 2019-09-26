@@ -1,3 +1,15 @@
+/*
+ mpiexec --hostfile ../hostfiles/myHostfile  mpi_blocking
+
+ Sample program output:
+
+Task 2: Received 0 char(s) from task 86343680 with tag 1
+Task 3: Received 0 char(s) from task 111505408 with tag 1
+Task 1: Received 1 char(s) from task 0 with tag 1
+Task 0: Received 1 char(s) from task 1 with tag 1
+
+ */
+
 #include "mpi.h"
 #include <stdio.h>
 
@@ -6,7 +18,7 @@ int main(int argc, char *argv[])  {
     char inmsg, outmsg='x';
     MPI_Status Stat;   // required variable for receive routines
 
-    MPI_Init(&argc,&argv);
+    MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 

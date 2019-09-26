@@ -1,4 +1,6 @@
 /*
+ mpiexec --hostfile ../hostfiles/myHostfile  mpi_vector_ddt
+
  Sample program output:
 
 rank= 0  b= 1.0 5.0 9.0 13.0

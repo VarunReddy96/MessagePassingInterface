@@ -1,3 +1,114 @@
+/*
+ mpiexec mpi_pi_reduce
+
+ Sample program output:
+
+MPI task 0 has started...
+MPI task 1 has started...
+   After    50000 throws, average value of pi = 3.14472000
+   After   100000 throws, average value of pi = 3.14434000
+   After   150000 throws, average value of pi = 3.14292000
+   After   200000 throws, average value of pi = 3.14201000
+   After   250000 throws, average value of pi = 3.14124000
+   After   300000 throws, average value of pi = 3.14192000
+   After   350000 throws, average value of pi = 3.14267429
+   After   400000 throws, average value of pi = 3.14215000
+   After   450000 throws, average value of pi = 3.14128444
+   After   500000 throws, average value of pi = 3.14048400
+   After   550000 throws, average value of pi = 3.14096000
+   After   600000 throws, average value of pi = 3.14111667
+   After   650000 throws, average value of pi = 3.14197538
+   After   700000 throws, average value of pi = 3.14203429
+   After   750000 throws, average value of pi = 3.14187200
+   After   800000 throws, average value of pi = 3.14171250
+   After   850000 throws, average value of pi = 3.14219059
+   After   900000 throws, average value of pi = 3.14220222
+   After   950000 throws, average value of pi = 3.14165684
+   After  1000000 throws, average value of pi = 3.14157800
+   After  1050000 throws, average value of pi = 3.14144571
+   After  1100000 throws, average value of pi = 3.14165273
+   After  1150000 throws, average value of pi = 3.14141043
+   After  1200000 throws, average value of pi = 3.14120500
+   After  1250000 throws, average value of pi = 3.14087200
+   After  1300000 throws, average value of pi = 3.14096923
+   After  1350000 throws, average value of pi = 3.14128296
+   After  1400000 throws, average value of pi = 3.14130286
+   After  1450000 throws, average value of pi = 3.14114345
+   After  1500000 throws, average value of pi = 3.14114267
+   After  1550000 throws, average value of pi = 3.14093161
+   After  1600000 throws, average value of pi = 3.14089000
+   After  1650000 throws, average value of pi = 3.14115152
+   After  1700000 throws, average value of pi = 3.14127882
+   After  1750000 throws, average value of pi = 3.14127200
+   After  1800000 throws, average value of pi = 3.14105444
+   After  1850000 throws, average value of pi = 3.14116865
+   After  1900000 throws, average value of pi = 3.14136421
+   After  1950000 throws, average value of pi = 3.14141744
+   After  2000000 throws, average value of pi = 3.14145000
+   After  2050000 throws, average value of pi = 3.14153073
+   After  2100000 throws, average value of pi = 3.14147524
+   After  2150000 throws, average value of pi = 3.14143256
+   After  2200000 throws, average value of pi = 3.14157909
+   After  2250000 throws, average value of pi = 3.14154933
+   After  2300000 throws, average value of pi = 3.14156783
+   After  2350000 throws, average value of pi = 3.14148851
+   After  2400000 throws, average value of pi = 3.14141583
+   After  2450000 throws, average value of pi = 3.14131020
+   After  2500000 throws, average value of pi = 3.14123200
+   After  2550000 throws, average value of pi = 3.14128706
+   After  2600000 throws, average value of pi = 3.14152462
+   After  2650000 throws, average value of pi = 3.14162340
+   After  2700000 throws, average value of pi = 3.14167481
+   After  2750000 throws, average value of pi = 3.14160945
+   After  2800000 throws, average value of pi = 3.14172071
+   After  2850000 throws, average value of pi = 3.14176000
+   After  2900000 throws, average value of pi = 3.14188207
+   After  2950000 throws, average value of pi = 3.14193017
+   After  3000000 throws, average value of pi = 3.14189200
+   After  3050000 throws, average value of pi = 3.14187607
+   After  3100000 throws, average value of pi = 3.14171871
+   After  3150000 throws, average value of pi = 3.14164508
+   After  3200000 throws, average value of pi = 3.14171187
+   After  3250000 throws, average value of pi = 3.14168923
+   After  3300000 throws, average value of pi = 3.14170485
+   After  3350000 throws, average value of pi = 3.14168776
+   After  3400000 throws, average value of pi = 3.14162647
+   After  3450000 throws, average value of pi = 3.14168870
+   After  3500000 throws, average value of pi = 3.14178229
+   After  3550000 throws, average value of pi = 3.14168282
+   After  3600000 throws, average value of pi = 3.14174667
+   After  3650000 throws, average value of pi = 3.14180658
+   After  3700000 throws, average value of pi = 3.14179892
+   After  3750000 throws, average value of pi = 3.14172107
+   After  3800000 throws, average value of pi = 3.14172895
+   After  3850000 throws, average value of pi = 3.14166390
+   After  3900000 throws, average value of pi = 3.14173282
+   After  3950000 throws, average value of pi = 3.14179848
+   After  4000000 throws, average value of pi = 3.14176450
+   After  4050000 throws, average value of pi = 3.14181037
+   After  4100000 throws, average value of pi = 3.14175366
+   After  4150000 throws, average value of pi = 3.14167229
+   After  4200000 throws, average value of pi = 3.14173381
+   After  4250000 throws, average value of pi = 3.14179012
+   After  4300000 throws, average value of pi = 3.14168884
+   After  4350000 throws, average value of pi = 3.14168644
+   After  4400000 throws, average value of pi = 3.14163273
+   After  4450000 throws, average value of pi = 3.14171685
+   After  4500000 throws, average value of pi = 3.14175289
+   After  4550000 throws, average value of pi = 3.14177582
+   After  4600000 throws, average value of pi = 3.14173304
+   After  4650000 throws, average value of pi = 3.14180000
+   After  4700000 throws, average value of pi = 3.14184170
+   After  4750000 throws, average value of pi = 3.14185389
+   After  4800000 throws, average value of pi = 3.14181958
+   After  4850000 throws, average value of pi = 3.14181526
+   After  4900000 throws, average value of pi = 3.14186082
+   After  4950000 throws, average value of pi = 3.14181333
+   After  5000000 throws, average value of pi = 3.14172800
+
+Real value of PI: 3.1415926535897
+ */
+
 /**********************************************************************
  * FILE: mpi_pi_reduce.c
  * OTHER FILES: dboard.c

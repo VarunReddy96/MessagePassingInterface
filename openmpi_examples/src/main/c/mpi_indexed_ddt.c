@@ -1,5 +1,7 @@
 /*
-Sample program output:
+ mpiexec --hostfile ../hostfiles/myHostfile  mpi_indexed_ddt
+
+ Sample program output:
 
 rank= 0  b= 6.0 7.0 8.0 9.0 13.0 14.0
 rank= 1  b= 6.0 7.0 8.0 9.0 13.0 14.0

@@ -1,4 +1,6 @@
 /*
+mpiexec --hostfile ../hostfiles/myHostfile8slots  mpi_groups
+
 Sample program output:
 
 rank= 7 newrank= 3 recvbuf= 22

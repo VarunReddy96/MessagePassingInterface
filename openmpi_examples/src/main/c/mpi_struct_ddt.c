@@ -1,4 +1,6 @@
 /*
+  mpiexec --hostfile ../hostfiles/myHostfile  mpi_struct_ddt
+
 Sample program output:
 
 rank= 0   3.00 -3.00 3.00 0.25 3 1

@@ -1,4 +1,15 @@
+/*
+ mpiexec --hostfile ../hostfiles/myHostfile  mpi_reduce
 
+Sample program output:
+
+Checkin from processor mac.lan, rank 2 out of 4 processors
+Checkin from processor mac.lan, rank 3 out of 4 processors
+Checkin from processor mac.lan, rank 0 out of 4 processors
+Checkin from processor mac.lan, rank 1 out of 4 processors
+PI: 3.141601
+
+ */
 
 #include <mpi.h>
 #include <stdio.h>
