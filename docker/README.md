@@ -90,6 +90,8 @@ mpijavac -cp <PATH-TO-OpenMPI-Source>/openmpi-4.0.1/ompi/mpi/java/java/mpi.jar e
 ```
 ```mpi.jar``` can be found in your OpenMPI installation folder e.g.,```openmpi-4.0.1/ompi/mpi/java/java/mpi.jar```. 
 
+Note, in docker containers, you can find a copy of ```mpi.jar``` in ```/csci654Tools/```.
+
 To run your MPI program
 ```
 cd openmpi_examples/src/main/java

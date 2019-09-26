@@ -31,6 +31,7 @@ RUN cd /csci654Tools && \
     ./configure --enable-mpi-java && \
     make && make install && \
     rm -rf ../openmpi-4.0.1.tar.gz && \
+    cp ompi/mpi/java/java/mpi.jar /csci654Tools/ && \
     echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/lib" >> /etc/profile
 
 
