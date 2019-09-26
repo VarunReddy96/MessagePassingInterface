@@ -53,9 +53,7 @@ bash removeMyContainers.bash
 ### Before compiling source code
 In each container (run ```docker attach container-{yourusername}-index``` to attach to a running container), run the following
 ```
-git pull
-cd /csci654/docker
-bash initContainer.bash
+git pull; cd /csci654/docker/; bash initContainer.bash
 ```
 
 #### C/C++
