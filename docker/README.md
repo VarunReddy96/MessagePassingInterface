@@ -11,7 +11,7 @@ The following commands for you to run within docker containers.
 
 ## OpenMP
 
-### C++
+### C/C++
 Add ```-fopenmp``` to your compile command, for example,
 ```
 g++ -fopenmp -o myProgram myProgram.cpp
@@ -61,7 +61,7 @@ cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
 make
 ```
 
-#### C++
+#### C/C++
 
 In the first container, add additional docker containers after ```172.17.0.2``` in ```/csci654/docker/myDockerHostFile```.
 
@@ -83,12 +83,22 @@ Hello world from processor e917980366ed, rank 3 out of 4 processors
 
 
 #### Java
-Use the following to compile your java code
+To compile your MPI java source code
 ```
-mpijavac
+cd openmpi_examples/src/main/java
+mpijavac -cp <PATH-TO-OpenMPI-Source>/openmpi-4.0.1/ompi/mpi/java/java/mpi.jar edu/rit/cs/MPI_Hello.java
+```
+```mpi.jar``` can be found in your OpenMPI installation folder e.g.,```openmpi-4.0.1/ompi/mpi/java/java/mpi.jar```. 
+
+To run your MPI program
+```
+cd openmpi_examples/src/main/java
+mpiexec java -cp <PATH-TO-OpenMPI-Source>/openmpi-4.0.1/ompi/mpi/java/java/mpi.jar  edu.rit.cs.MPI_Hello
 ```
 
-### RUN
+Sample output
 ```
-mpiexec     mpirun
+From Java Program: Number of tasks= 2, My rank=1, Running on mac-2.local
+From Java Program: Number of tasks= 2, My rank=0, Running on mac-2.local
+```
 ```
