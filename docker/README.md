@@ -57,45 +57,48 @@ In each container, run the following
 git pull
 cd /csci654/docker
 bash initContainer.bash
-cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
-make
 ```
 
 #### C/C++
 
-In the first container, add additional docker containers after ```172.17.0.2``` in ```/csci654/docker/myDockerHostFile```.
+To compile
+```
+cd /csci654/openmpi_examples/src/main/c
+make
+```
+
+In the first container, add additional docker containers after ```localhost``` in ```/csci654/openmpi_examples/src/main/c/hostfile/myHostfile``` if necessary.
 
 ```
-cd /csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code
-mpirun -np 8 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
+cd /csci654/openmpi_examples/src/main/c
+mpirun --hostfile /csci654/openmpi_examples/src/main/c/hostfile/myHostfile --allow-run-as-root mpi_hello
 ```
+
+Sample output
+```
+From C/C++ Program: Number of tasks= 2, My rank=1, Running on mac-2.local
+From C/C++ Program: Number of tasks= 2, My rank=0, Running on mac-2.local
+```
+
+Similar procedure for testing example within ```/csci654/openmpi_examples/src/main/mpitutorial/```.
 
 [OpenMPI Reference](https://www.open-mpi.org/doc/current/)
-
-Example run in Docker containers (each container offer one processor)
-```
-root@7b0565f38e7d:/csci654/openmpi_examples/src/main/mpitutorial/mpi-hello-world/code# mpirun -np 4 --hostfile /csci654/docker/myDockerHostFile --allow-run-as-root mpi_hello_world
-Hello world from processor 7b0565f38e7d, rank 0 out of 4 processors
-Hello world from processor 7b0565f38e7d, rank 1 out of 4 processors
-Hello world from processor e917980366ed, rank 2 out of 4 processors
-Hello world from processor e917980366ed, rank 3 out of 4 processors
-```
 
 
 #### Java
 To compile your MPI java source code
 ```
-cd openmpi_examples/src/main/java
-mpijavac -cp <PATH-TO-OpenMPI-Source>/openmpi-4.0.1/ompi/mpi/java/java/mpi.jar edu/rit/cs/MPI_Hello.java
+cd /csci654/openmpi_examples/src/main/java
+mpijavac -cp /csci654Tools/mpi.jar edu/rit/cs/MPI_Hello.java
 ```
-```mpi.jar``` can be found in your OpenMPI installation folder e.g.,```openmpi-4.0.1/ompi/mpi/java/java/mpi.jar```. 
 
-Note, in docker containers, you can find a copy of ```mpi.jar``` in ```/csci654Tools/```.
+Note, in other systems, ```mpi.jar``` can be found in your OpenMPI installation folder e.g.,```openmpi-4.0.1/ompi/mpi/java/java/mpi.jar```. 
+
 
 To run your MPI program
 ```
-cd openmpi_examples/src/main/java
-mpiexec java -cp <PATH-TO-OpenMPI-Source>/openmpi-4.0.1/ompi/mpi/java/java/mpi.jar  edu.rit.cs.MPI_Hello
+cd /csci654/openmpi_examples/src/main/java
+mpiexec java -cp /csci654Tools/mpi.jar  edu.rit.cs.MPI_Hello
 ```
 
 Sample output
