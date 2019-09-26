@@ -25,7 +25,6 @@ int main(int argc, char *argv[])  {
     MPI_Status stat;
     MPI_Datatype columntype;   // required variable
 
-
     MPI_Init(&argc,&argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
@@ -36,17 +35,14 @@ int main(int argc, char *argv[])  {
 
     if (numtasks == SIZE) {
         // task 0 sends one element of columntype to all tasks
-        if (rank == 0) {
+        if (rank == 0)
             for (i=0; i<numtasks; i++)
                 MPI_Send(&a[0][i], 1, columntype, i, tag, MPI_COMM_WORLD);
-        }
 
         // all tasks receive columntype data from task 0
         MPI_Recv(b, SIZE, MPI_FLOAT, source, tag, MPI_COMM_WORLD, &stat);
-        printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f\n",
-               rank,b[0],b[1],b[2],b[3]);
-    }
-    else
+        printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f\n", rank,b[0],b[1],b[2],b[3]);
+    } else
         printf("Must specify %d processors. Terminating.\n",SIZE);
 
     // free datatype when done using it

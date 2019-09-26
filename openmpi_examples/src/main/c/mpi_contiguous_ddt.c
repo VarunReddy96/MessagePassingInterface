@@ -37,17 +37,15 @@ int main(int argc, char *argv[])  {
 
     if (numtasks == SIZE) {
         // task 0 sends one element of rowtype to all tasks
-        if (rank == 0) {
+        if (rank == 0)
             for (i=0; i<numtasks; i++)
                 MPI_Send(&a[i][0], 1, rowtype, i, tag, MPI_COMM_WORLD);
-        }
+
 
         // all tasks receive rowtype data from task 0
         MPI_Recv(b, SIZE, MPI_FLOAT, source, tag, MPI_COMM_WORLD, &stat);
-        printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f\n",
-               rank,b[0],b[1],b[2],b[3]);
-    }
-    else
+        printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f\n", rank,b[0],b[1],b[2],b[3]);
+    } else
         printf("Must specify %d processors. Terminating.\n",SIZE);
 
     // free datatype when done using it

@@ -37,16 +37,13 @@ int main(int argc, char *argv[])  {
     MPI_Type_indexed(2, blocklengths, displacements, MPI_FLOAT, &indextype);
     MPI_Type_commit(&indextype);
 
-    if (rank == 0) {
-        for (i=0; i<numtasks; i++)
-            // task 0 sends one element of indextype to all tasks
+    if (rank == 0)
+        for (i=0; i<numtasks; i++) // task 0 sends one element of indextype to all tasks
             MPI_Send(a, 1, indextype, i, tag, MPI_COMM_WORLD);
-    }
 
     // all tasks receive indextype data from task 0
     MPI_Recv(b, NELEMENTS, MPI_FLOAT, source, tag, MPI_COMM_WORLD, &stat);
-    printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f %3.1f %3.1f\n",
-           rank,b[0],b[1],b[2],b[3],b[4],b[5]);
+    printf("rank= %d  b= %3.1f %3.1f %3.1f %3.1f %3.1f %3.1f\n", rank,b[0],b[1],b[2],b[3],b[4],b[5]);
 
     // free datatype when done using it
     MPI_Type_free(&indextype);

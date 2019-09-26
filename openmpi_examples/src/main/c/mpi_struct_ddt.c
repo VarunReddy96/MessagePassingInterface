@@ -29,7 +29,7 @@ int main(int argc, char *argv[])  {
     // MPI_Aint type used to be consistent with syntax of
     // MPI_Type_extent routine
     MPI_Aint    offsets[2], extent;
-
+    MPI_Aint lb;
     MPI_Status stat;
 
     MPI_Init(&argc, &argv);
@@ -41,7 +41,6 @@ int main(int argc, char *argv[])  {
     oldtypes[0] = MPI_FLOAT;
     blockcounts[0] = 4;
 
-    MPI_Aint lb;
     // setup description of the 2 MPI_INT fields n, type
     // need to first figure offset by getting size of MPI_FLOAT
     MPI_Type_get_extent(MPI_FLOAT, &lb, &extent);
@@ -69,9 +68,7 @@ int main(int argc, char *argv[])  {
 
     // all tasks receive particletype data
     MPI_Recv(p, NELEM, particletype, source, tag, MPI_COMM_WORLD, &stat);
-
-    printf("rank= %d   %3.2f %3.2f %3.2f %3.2f %d %d\n", rank,p[3].x,
-           p[3].y,p[3].z,p[3].velocity,p[3].n,p[3].type);
+    printf("rank= %d   %3.2f %3.2f %3.2f %3.2f %d %d\n", rank,p[3].x,p[3].y,p[3].z,p[3].velocity,p[3].n,p[3].type);
 
     // free datatype when done using it
     MPI_Type_free(&particletype);
