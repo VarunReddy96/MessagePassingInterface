@@ -67,14 +67,17 @@ make
 In the first container, add additional docker containers after ```localhost``` in ```/csci654/openmpi_examples/src/main/c/hostfile/myHostfile``` if necessary.
 
 ```
-cd /csci654/openmpi_examples/src/main/c
-mpirun --hostfile /csci654/openmpi_examples/src/main/c/hostfile/myHostfile --allow-run-as-root mpi_hello
+cd /csci654/openmpi_examples/src/main/c/bin
+mpirun --hostfile /csci654/openmpi_examples/src/main/c/hostfiles/myHostfile --allow-run-as-root mpi_hello
 ```
 
 Sample output
 ```
-From C/C++ Program: Number of tasks= 2, My rank=1, Running on mac-2.local
-From C/C++ Program: Number of tasks= 2, My rank=0, Running on mac-2.local
+root@174ad6630e6b:/csci654/openmpi_examples/src/main/c/bin# mpirun --hostfile /csci654/openmpi_examples/src/main/c/hostfiles/myHostfile --allow-run-as-root mpi_hello
+From C/C++ Program: Number of tasks= 4 My rank= 2 Running on 174ad6630e6b
+From C/C++ Program: Number of tasks= 4 My rank= 3 Running on 174ad6630e6b
+From C/C++ Program: Number of tasks= 4 My rank= 1 Running on 174ad6630e6b
+From C/C++ Program: Number of tasks= 4 My rank= 0 Running on 174ad6630e6b
 ```
 
 Similar procedure for testing example within ```/csci654/openmpi_examples/src/main/mpitutorial/```.
@@ -95,12 +98,15 @@ Note, in other systems, ```mpi.jar``` can be found in your OpenMPI installation 
 To run your MPI program
 ```
 cd /csci654/openmpi_examples/src/main/java
-mpiexec java -cp /csci654Tools/mpi.jar  edu.rit.cs.MPI_Hello
+mpiexec --allow-run-as-root java -cp /csci654Tools/mpi.jar  edu.rit.cs.MPI_Hello
 ```
 
 Sample output
 ```
-From Java Program: Number of tasks= 2, My rank=1, Running on mac-2.local
-From Java Program: Number of tasks= 2, My rank=0, Running on mac-2.local
+root@174ad6630e6b:/csci654/openmpi_examples/src/main/java# mpiexec --allow-run-as-root java -cp /csci654Tools/mpi.jar  edu.rit.cs.MPI_Hello
+From Java Program: Number of tasks= 4, My rank=0, Running on 174ad6630e6b
+From Java Program: Number of tasks= 4, My rank=3, Running on 174ad6630e6b
+From Java Program: Number of tasks= 4, My rank=1, Running on 174ad6630e6b
+From Java Program: Number of tasks= 4, My rank=2, Running on 174ad6630e6b
 ```
 ```
