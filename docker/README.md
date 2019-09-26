@@ -50,9 +50,8 @@ cd {PROJECT_ROOT}/docker
 bash removeMyContainers.bash
 ```
 
-### Compile source code
-
-In each container, run the following
+### Before compiling source code
+In each container (run ```docker attach container-{yourusername}-index``` to attach to a running container), run the following
 ```
 git pull
 cd /csci654/docker
