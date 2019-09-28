@@ -20,6 +20,11 @@ From C/C++ Program: Number of tasks= 2 My rank= 1 Running on mac-2.local
 From C/C++ Program: Number of tasks= 2 My rank= 0 Running on mac-2.local
 ```
 
+Note, add ```--prefix /usr/local``` if you have the folloing error:
+```
+orted: error while loading shared libraries: libopen-rte.so.40: cannot open shared object file: No such file or directory
+```
+
 
 ## Java
 
