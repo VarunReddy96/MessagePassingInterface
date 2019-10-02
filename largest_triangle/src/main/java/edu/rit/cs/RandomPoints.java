@@ -26,7 +26,6 @@ public class RandomPoints
     private int N;
     private double side;
     private Random prng;
-    private Point p = new Point();
     private int i = 0;
 
 // Exported constructors.
@@ -98,10 +97,8 @@ public class RandomPoints
     {
         if (i == N)
             throw new NoSuchElementException();
-        p.x = side*prng.nextDouble();
-        p.y = side*prng.nextDouble();
         ++ i;
-        return p;
+        return new Point(side*prng.nextDouble(), side*prng.nextDouble());
     }
 
     /**

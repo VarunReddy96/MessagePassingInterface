@@ -2,23 +2,30 @@ package edu.rit.cs;
 
 /**
  * Class Point encapsulates a two-dimensional point.
- *
- * @author  Alan Kaminsky
- * @version 28-Sep-2018
  */
 public class Point
 {
+    private double x;
+    private double y;
 
-// Exported data members.
+    public Point(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
 
-    /**
-     * X coordinate.
-     */
-    public double x;
+    public double getX() {
+        return x;
+    }
 
-    /**
-     * Y coordinate.
-     */
-    public double y;
+    public double getY() {
+        return y;
+    }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
 }
